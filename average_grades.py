@@ -18,9 +18,19 @@ print(f'Class average is:{average}')
 """Class average with sentinel controlled iteration"""
 # initialization phase
 total = 0
-grade_counter = 0
+grade_counter: int = 0
 grade = int(input("Enter grade, type -1 to end it:"))
 
 # processing phase
 while grade != -1:
     total += grade
+    grade_counter += 1
+    grade = int(input("Enter grade, type -1 to end it:"))
+
+#termination phase
+if grade_counter != 0:
+    average = total / grade_counter
+    print(f"Class average is {average}")
+else:
+    print("No grade entered")
+
